@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Minimal styling via Tailwind CDN for quick layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <div class="min-h-screen">
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            </div>
+        </header>
+
+        <main class="py-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-md mx-auto mt-12 p-6 bg-white shadow-sm rounded">
+    <p class="text-sm text-gray-600 mb-4">Access your account to buy helmets, parts and accessories for your motorcycle.</p>
+
+    
+    <form method="POST" action="http://127.0.0.1:8000/login">
+        <input type="hidden" name="_token" value="RkxP64zHkRHc6iwrC1Vws9XnXwkPxhH6TtVhYCuu" autocomplete="off">
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="email" name="email" type="email" value="" required autofocus
+                   class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+                    </div>
+
+        <div class="mb-4">
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input id="password" name="password" type="password" required
+                   class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+                    </div>
+
+        <div class="flex items-center justify-between mb-4">
+            <label class="flex items-center text-sm">
+                <input type="checkbox" name="remember" class="mr-2" /> Remember me
+            </label>
+            <a href="#" class="text-sm text-blue-600">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="w-full py-2 px-4 bg-gray-900 text-white rounded">Sign in</button>
+    </form>
+
+    <title>Login — Online Shop MotorCycle Accessories</title>
+                <a href="/" class="text-lg font-bold">Online Shop MotorCycle Accessories</a>
+    <h1 class="text-2xl font-semibold mb-2">Sign in to Online Shop MotorCycle Accessories</h1>
+    <p class="mt-4 text-center text-sm text-gray-600">New to Online Shop MotorCycle Accessories? <a href="http://127.0.0.1:8000/register" class="text-blue-600">Create an account</a></p>
+</div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
