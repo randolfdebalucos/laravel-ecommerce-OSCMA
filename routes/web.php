@@ -28,6 +28,7 @@ Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 
+// Initialize
 // Handle registration submission (placeholder — replace with controller logic)
 Route::post('/register', function (\Illuminate\Http\Request $request) {
     $data = $request->validate([
