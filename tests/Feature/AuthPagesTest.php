@@ -2,10 +2,12 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class AuthPagesTest extends TestCase
 {
+    use RefreshDatabase;
     public function test_login_page_renders()
     {
         $response = $this->get('/login');
@@ -24,7 +26,7 @@ class AuthPagesTest extends TestCase
     {
         $response = $this->post('/login', ['email' => 'foo@example.com', 'password' => 'secret']);
         $response->assertStatus(302);
-        $response->assertSessionHas('status', 'Login attempted (placeholder).');
+    $response->assertSessionHas('status', 'Invalid credentials.');
     }
 
     public function test_register_post_redirects_to_login()
@@ -38,6 +40,6 @@ class AuthPagesTest extends TestCase
         ]);
 
         $response->assertRedirect('/login');
-        $response->assertSessionHas('status', 'Registration successful (placeholder).');
+    $response->assertSessionHas('status', 'Registration successful.');
     }
 }

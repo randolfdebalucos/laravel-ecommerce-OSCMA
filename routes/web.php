@@ -5,31 +5,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/login');
 });
+// Authentication routes (controller-backed)
+Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'show'])->name('login');
+Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'store']);
+Route::post('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'destroy'])->name('logout');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::post('/login', function (\Illuminate\Http\Request $request) {
-    $data = $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
-
-    return back()->with('status', 'Login attempted (placeholder).');
-});
-
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
-
-Route::post('/register', function (\Illuminate\Http\Request $request) {
-    $data = $request->validate([
-        'name' => 'required|string|max:255',
-        'username' => 'required|string|max:255',
-        'email' => 'required|email',
-        'password' => 'required|confirmed|min:6',
-    ]);
-
-    return redirect('/login')->with('status', 'Registration successful (placeholder).');
-});
+Route::get('/register', [\App\Http\Controllers\Auth\RegisterController::class, 'show'])->name('register');
+Route::post('/register', [\App\Http\Controllers\Auth\RegisterController::class, 'store']);

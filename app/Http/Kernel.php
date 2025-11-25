@@ -26,6 +26,7 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\RedirectIfAuthenticated::class,
         ],
 
         'api' => [
@@ -41,5 +42,6 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class ?? '\\Illuminate\\Auth\\Middleware\\Authenticate',
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
     ];
 }
