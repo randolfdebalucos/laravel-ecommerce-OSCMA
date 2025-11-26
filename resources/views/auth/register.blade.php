@@ -35,6 +35,22 @@
 
         <div class="grid grid-cols-2 gap-4 mb-4">
             <div>
+                <label for="address" class="block text-sm font-medium text-gray-700">Address (optional)</label>
+                <input id="address" name="address" type="text" value="{{ old('address') }}"
+                       class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+                @error('address') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
+            </div>
+
+            <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700">Phone (optional)</label>
+                <input id="phone" name="phone" type="text" value="{{ old('phone') }}"
+                       class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+                @error('phone') <p class="text-sm text-red-600 mt-1">{{ $message }}</p> @enderror
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
                 <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                 <input id="password" name="password" type="password" required
                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />

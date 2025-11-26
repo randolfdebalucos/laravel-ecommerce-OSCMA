@@ -12,6 +12,8 @@ class Registration extends Model
         'name',
         'username',
         'email',
+        'address',
+        'phone',
         'password',
         'status',
     ];
