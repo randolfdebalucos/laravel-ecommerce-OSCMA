@@ -1,3 +1,8 @@
+{{--
+    View: auth.register
+    Purpose: Registration form view used by `App\Http\Controllers\Auth\RegisterController`.
+    Collects name, username, email, optional address/phone, and password confirmation.
+--}}
 @extends('layouts.app')
 
 @section('title', 'Register — Online Shop MotorCycle Accessories')

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Feature Test: AuthPagesTest
+ * Purpose: Verifies the login and registration pages and basic flows
+ * using the lightweight session-based authentication implementation.
+ */
 
 namespace Tests\Feature;
 
@@ -8,25 +13,26 @@ use Tests\TestCase;
 class AuthPagesTest extends TestCase
 {
     use RefreshDatabase;
+
     public function test_login_page_renders()
     {
         $response = $this->get('/login');
         $response->assertStatus(200);
-    $response->assertSee('Sign in to Online Shop MotorCycle Accessories');
+        $response->assertSee('Sign in to Online Shop MotorCycle Accessories');
     }
 
     public function test_register_page_renders()
     {
         $response = $this->get('/register');
         $response->assertStatus(200);
-    $response->assertSee('Create your Online Shop MotorCycle Accessories account');
+        $response->assertSee('Create your Online Shop MotorCycle Accessories account');
     }
 
     public function test_login_post_redirects_back_with_status()
     {
         $response = $this->post('/login', ['email' => 'foo@example.com', 'password' => 'secret']);
         $response->assertStatus(302);
-    $response->assertSessionHas('status', 'Invalid credentials.');
+        $response->assertSessionHas('status', 'Invalid credentials.');
     }
 
     public function test_register_post_redirects_to_login()
@@ -40,6 +46,6 @@ class AuthPagesTest extends TestCase
         ]);
 
         $response->assertRedirect('/login');
-    $response->assertSessionHas('status', 'Registration successful.');
+        $response->assertSessionHas('status', 'Registration successful.');
     }
 }

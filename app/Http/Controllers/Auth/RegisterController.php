@@ -1,4 +1,5 @@
 <?php
+// Controller: RegisterController — shows registration form and stores new users
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -7,11 +8,13 @@ use App\Models\Registration;
 
 class RegisterController extends Controller
 {
+    // Show the registration form
     public function show()
     {
         return view('auth.register');
     }
 
+    // Handle registration POST: validate, hash password, create record
     public function store(Request $request)
     {
         $data = $request->validate([

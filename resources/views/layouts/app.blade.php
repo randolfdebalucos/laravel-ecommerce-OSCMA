@@ -1,3 +1,8 @@
+{{--
+    Layout: layouts.app
+    Purpose: Base HTML layout used by pages across the site. Provides the
+    main header and yields `title` and `content` sections for child views.
+--}}
 <!doctype html>
 <html lang="en">
 <head>

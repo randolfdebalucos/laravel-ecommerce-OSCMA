@@ -1,3 +1,8 @@
+{{--
+    View: auth.login
+    Purpose: Login form view used by `App\Http\Controllers\Auth\LoginController`.
+    Shows a simple email/password form and displays session `status` messages.
+--}}
 @extends('layouts.app')
 
 @section('title', 'Login — Online Shop MotorCycle Accessories')
